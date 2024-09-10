@@ -12,6 +12,6 @@ Assignment for Bureau ID Recruitment
   <l1>EDA_Report.html: EDA profile report</l1>
   <li>predictions.csv: Final Predictions Submission</li>
   <li>README.md: This file</li>
-<\ul>
+</ul>
 
 ## All other information can be found in the report and the notebook.
