@@ -1,0 +1,77 @@
+{
+    "new_features": [
+        {
+            "feature1": "TOTAL ASSET COST",
+            "feature2": "phone_nameMatchScore",
+            "operation": "diff",
+            "score": 0.325473131
+        },
+        {
+            "feature1": "phone_nameMatchScore",
+            "feature2": "TOTAL ASSET COST",
+            "operation": "sum",
+            "score": 0.3259000574
+        },
+        {
+            "feature1": "AGE",
+            "feature2": "TOTAL ASSET COST",
+            "operation": "diff",
+            "score": 0.3281499821
+        },
+        {
+            "feature1": "TOTAL ASSET COST",
+            "feature2": "AGE",
+            "operation": "sum",
+            "score": 0.3282016294
+        },
+        {
+            "feature1": "TOTAL ASSET COST",
+            "feature2": "phone_nameMatchScore",
+            "operation": "ratio",
+            "score": 0.5160200043
+        },
+        {
+            "feature1": "phone_nameMatchScore",
+            "feature2": "TOTAL ASSET COST",
+            "operation": "multiply",
+            "score": 0.5564813725
+        },
+        {
+            "feature1": "TOTAL ASSET COST",
+            "feature2": "ASSET MODEL NO",
+            "operation": "ratio",
+            "score": 0.5696557828
+        },
+        {
+            "feature1": "ASSET MODEL NO",
+            "feature2": "TOTAL ASSET COST",
+            "operation": "ratio",
+            "score": 0.5696557828
+        },
+        {
+            "feature1": "TOTAL ASSET COST",
+            "feature2": "ASSET MODEL NO",
+            "operation": "multiply",
+            "score": 0.5731352595
+        },
+        {
+            "feature1": "phone_nameMatchScore",
+            "feature2": "TOTAL ASSET COST",
+            "operation": "ratio",
+            "score": 0.5764620809
+        }
+    ],
+    "new_columns": [
+        "TOTAL ASSET COST_diff_phone_nameMatchScore",
+        "phone_nameMatchScore_sum_TOTAL ASSET COST",
+        "AGE_diff_TOTAL ASSET COST",
+        "TOTAL ASSET COST_sum_AGE",
+        "TOTAL ASSET COST_ratio_phone_nameMatchScore",
+        "phone_nameMatchScore_multiply_TOTAL ASSET COST",
+        "TOTAL ASSET COST_ratio_ASSET MODEL NO",
+        "ASSET MODEL NO_ratio_TOTAL ASSET COST",
+        "TOTAL ASSET COST_multiply_ASSET MODEL NO",
+        "phone_nameMatchScore_ratio_TOTAL ASSET COST"
+    ],
+    "ml_task": "binary_classification"
+}

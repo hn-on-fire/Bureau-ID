@@ -1,0 +1,63 @@
+{
+    "columns": [
+        "ADDRESS TYPE",
+        "AGE",
+        "ASSET CTG",
+        "ASSET MODEL NO",
+        "EMPLOYER TYPE",
+        "HDB BRANCH STATE",
+        "PRIMARY ASSET MAKE",
+        "TOTAL ASSET COST",
+        "phone_nameMatchScore"
+    ],
+    "rows": 6700,
+    "cols": 9,
+    "target_is_numeric": false,
+    "columns_info": {
+        "ADDRESS TYPE": [
+            "missing_values",
+            "categorical",
+            "few_categories"
+        ],
+        "AGE": [
+            "scale"
+        ],
+        "ASSET CTG": [
+            "missing_values",
+            "categorical",
+            "few_categories"
+        ],
+        "ASSET MODEL NO": [
+            "scale"
+        ],
+        "EMPLOYER TYPE": [
+            "missing_values",
+            "categorical",
+            "few_categories"
+        ],
+        "HDB BRANCH STATE": [
+            "missing_values",
+            "categorical",
+            "many_categories"
+        ],
+        "PRIMARY ASSET MAKE": [
+            "categorical",
+            "few_categories"
+        ],
+        "TOTAL ASSET COST": [
+            "missing_values",
+            "scale"
+        ],
+        "phone_nameMatchScore": [
+            "missing_values",
+            "scale"
+        ]
+    },
+    "target_info": [
+        "convert_0_1"
+    ],
+    "n_features": 9,
+    "is_sample_weighted": false,
+    "is_fairness_applied": false,
+    "n_classes": 2
+}

@@ -1,0 +1,153 @@
+{
+    "uid": "e12e1686-e188-4928-a65b-ee97da5076f2",
+    "name": "32_CatBoost_RandomFeature",
+    "preprocessing": [
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "ADDRESS TYPE": "Self/Spouse Owned",
+                        "ASSET CTG": "MCECA",
+                        "EMPLOYER TYPE": "SELF-EMPLOYED",
+                        "HDB BRANCH STATE": "UTTAR PRADESH",
+                        "TOTAL ASSET COST": 94404.0
+                    },
+                    "datetime_columns": []
+                }
+            ],
+            "categorical_y": {
+                "APPROVED": 0,
+                "DECLINED": 1
+            },
+            "ml_task": "binary_classification",
+            "add_random_feature": true,
+            "params": {
+                "columns_preprocessing": {
+                    "ADDRESS TYPE": [
+                        "na_fill_median"
+                    ],
+                    "ASSET CTG": [
+                        "na_fill_median"
+                    ],
+                    "EMPLOYER TYPE": [
+                        "na_fill_median"
+                    ],
+                    "HDB BRANCH STATE": [
+                        "na_fill_median"
+                    ],
+                    "TOTAL ASSET COST": [
+                        "na_fill_median"
+                    ],
+                    "phone_nameMatchScore": [
+                        "na_fill_median"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification",
+                "add_random_feature": true
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "1.2.7",
+            "algorithm_name": "CatBoost",
+            "algorithm_short_name": "CatBoost",
+            "uid": "37ab58a9-fe35-48b7-a5fb-baecac330568",
+            "params": {
+                "model_type": "CatBoost",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 50,
+                "learning_rate": 0.1,
+                "depth": 8,
+                "rsm": 1.0,
+                "loss_function": "Logloss",
+                "eval_metric": "AUC",
+                "explain_level": 1
+            },
+            "name": "learner_fold_0",
+            "best_ntree_limit": 57
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_rounds": 10000,
+            "early_stopping_rounds": 50,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "ADDRESS TYPE": [
+                    "na_fill_median"
+                ],
+                "ASSET CTG": [
+                    "na_fill_median"
+                ],
+                "EMPLOYER TYPE": [
+                    "na_fill_median"
+                ],
+                "HDB BRANCH STATE": [
+                    "na_fill_median"
+                ],
+                "TOTAL ASSET COST": [
+                    "na_fill_median"
+                ],
+                "phone_nameMatchScore": [
+                    "na_fill_median"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification",
+            "add_random_feature": true
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.8,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "AutoML_4/X.data",
+            "y_path": "AutoML_4/y.data",
+            "results_path": "AutoML_4"
+        },
+        "learner": {
+            "model_type": "CatBoost",
+            "ml_task": "binary_classification",
+            "n_jobs": -1,
+            "seed": 50,
+            "learning_rate": 0.1,
+            "depth": 8,
+            "rsm": 1.0,
+            "loss_function": "Logloss",
+            "eval_metric": "AUC",
+            "explain_level": 1
+        },
+        "automl_random_state": 42,
+        "ml_task": "binary_classification",
+        "explain_level": 1,
+        "name": "32_CatBoost_RandomFeature",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null,
+        "data_type": "original",
+        "max_time_for_learner": 360.0
+    },
+    "saved": [
+        "32_CatBoost_RandomFeature/learner_fold_0.catboost"
+    ],
+    "predictions_fname": "32_CatBoost_RandomFeature/predictions_validation.csv",
+    "metric_name": "auc",
+    "final_loss": "-0.9025243412327523",
+    "train_time": 2.4120070934295654,
+    "is_stacked": false,
+    "joblib_version": "1.2.0",
+    "threshold": 0.5880016283194334
+}

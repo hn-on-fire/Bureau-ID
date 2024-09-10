@@ -1,0 +1,332 @@
+{
+    "uid": "93b435d9-de1a-4092-8c68-3cefd76bef26",
+    "name": "12_Xgboost_categorical_mix",
+    "preprocessing": [
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "ADDRESS TYPE": "Self/Spouse Owned",
+                        "ASSET CTG": "MCECA",
+                        "EMPLOYER TYPE": "SELF-EMPLOYED",
+                        "HDB BRANCH STATE": "UTTAR PRADESH",
+                        "TOTAL ASSET COST": 94404.0
+                    },
+                    "datetime_columns": []
+                }
+            ],
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "HDB BRANCH STATE": {
+                            "ANDHRA PRADESH": 0,
+                            "ASSAM": 1,
+                            "BIHAR": 2,
+                            "CHHATTISGARH": 3,
+                            "DELHI": 4,
+                            "GUJARAT": 5,
+                            "HARYANA": 6,
+                            "HIMACHAL PRADESH": 7,
+                            "JHARKHAND": 8,
+                            "KARNATAKA": 9,
+                            "KERALA": 10,
+                            "MADHYA PRADESH": 11,
+                            "MAHARASHTRA": 12,
+                            "ORISSA": 13,
+                            "PUDUCHERRY": 14,
+                            "PUNJAB": 15,
+                            "RAJASTHAN": 16,
+                            "SIKKIM": 17,
+                            "TAMIL NADU": 18,
+                            "TELANGANA": 19,
+                            "TRIPURA": 20,
+                            "UTTAR PRADESH": 21,
+                            "UTTARAKHAND": 22,
+                            "WEST BENGAL": 23
+                        }
+                    },
+                    "columns": [
+                        "HDB BRANCH STATE"
+                    ]
+                },
+                {
+                    "convert_method": "categorical_to_onehot",
+                    "convert_params": {
+                        "ADDRESS TYPE": {
+                            "new_columns": [
+                                "ADDRESS TYPE_Company Provided",
+                                "ADDRESS TYPE_OWNDED-FLAT",
+                                "ADDRESS TYPE_OWNED-BUNGLOW",
+                                "ADDRESS TYPE_OWNED-PENTHOUSE",
+                                "ADDRESS TYPE_OWNED-ROWHOUSE",
+                                "ADDRESS TYPE_PARENT OWNED-FLAT",
+                                "ADDRESS TYPE_PARENT OWNED-HOUSE",
+                                "ADDRESS TYPE_Parental",
+                                "ADDRESS TYPE_RENTED-ROWHOUSE",
+                                "ADDRESS TYPE_RESIDENCE",
+                                "ADDRESS TYPE_Rented",
+                                "ADDRESS TYPE_Self/Spouse Owned"
+                            ],
+                            "unique_values": [
+                                "Company Provided",
+                                "OWNDED-FLAT",
+                                "OWNED-BUNGLOW",
+                                "OWNED-PENTHOUSE",
+                                "OWNED-ROWHOUSE",
+                                "PARENT OWNED-FLAT",
+                                "PARENT OWNED-HOUSE",
+                                "Parental",
+                                "RENTED-ROWHOUSE",
+                                "RESIDENCE",
+                                "Rented",
+                                "Self/Spouse Owned"
+                            ],
+                            "old_column": "ADDRESS TYPE"
+                        },
+                        "ASSET CTG": {
+                            "new_columns": [
+                                "ASSET CTG_EMECA",
+                                "ASSET CTG_ESECB",
+                                "ASSET CTG_ESNRB",
+                                "ASSET CTG_ESNRC",
+                                "ASSET CTG_MCECA",
+                                "ASSET CTG_MCECB",
+                                "ASSET CTG_MCECC",
+                                "ASSET CTG_MCEXA",
+                                "ASSET CTG_MCEXB",
+                                "ASSET CTG_MCPRA",
+                                "ASSET CTG_MOECA",
+                                "ASSET CTG_SCECA",
+                                "ASSET CTG_SCEXA"
+                            ],
+                            "unique_values": [
+                                "EMECA",
+                                "ESECB",
+                                "ESNRB",
+                                "ESNRC",
+                                "MCECA",
+                                "MCECB",
+                                "MCECC",
+                                "MCEXA",
+                                "MCEXB",
+                                "MCPRA",
+                                "MOECA",
+                                "SCECA",
+                                "SCEXA"
+                            ],
+                            "old_column": "ASSET CTG"
+                        },
+                        "EMPLOYER TYPE": {
+                            "new_columns": [
+                                "EMPLOYER TYPE_Government",
+                                "EMPLOYER TYPE_Non-Government",
+                                "EMPLOYER TYPE_SALARIED",
+                                "EMPLOYER TYPE_SELF-EMPLOYED"
+                            ],
+                            "unique_values": [
+                                "Government",
+                                "Non-Government",
+                                "SALARIED",
+                                "SELF-EMPLOYED"
+                            ],
+                            "old_column": "EMPLOYER TYPE"
+                        },
+                        "PRIMARY ASSET MAKE": {
+                            "new_columns": [
+                                "PRIMARY ASSET MAKE_AMO ELECTRIC",
+                                "PRIMARY ASSET MAKE_AMPERE MOTORS",
+                                "PRIMARY ASSET MAKE_BAJAJ AUTO INDIA",
+                                "PRIMARY ASSET MAKE_BENLING ELECTRIC",
+                                "PRIMARY ASSET MAKE_HERO ELECTRIC VEHICLES P LTD",
+                                "PRIMARY ASSET MAKE_HERO MOTORS",
+                                "PRIMARY ASSET MAKE_HONDA MOTORS",
+                                "PRIMARY ASSET MAKE_HOP ELECTRIC",
+                                "PRIMARY ASSET MAKE_JAWA MOTORS",
+                                "PRIMARY ASSET MAKE_OKAYA ELECTRIC",
+                                "PRIMARY ASSET MAKE_OKINAWA ELECTRIC",
+                                "PRIMARY ASSET MAKE_PIAGGIO INDIA",
+                                "PRIMARY ASSET MAKE_ROYAL ENFIELD BIKES INDIA",
+                                "PRIMARY ASSET MAKE_SUZUKI MOTORCYCLE",
+                                "PRIMARY ASSET MAKE_TVS MOTOR CO",
+                                "PRIMARY ASSET MAKE_YAMAHA MOTOR"
+                            ],
+                            "unique_values": [
+                                "AMO ELECTRIC",
+                                "AMPERE MOTORS",
+                                "BAJAJ AUTO INDIA",
+                                "BENLING ELECTRIC",
+                                "HERO ELECTRIC VEHICLES P LTD",
+                                "HERO MOTORS",
+                                "HONDA MOTORS",
+                                "HOP ELECTRIC",
+                                "JAWA MOTORS",
+                                "OKAYA ELECTRIC",
+                                "OKINAWA ELECTRIC",
+                                "PIAGGIO INDIA",
+                                "ROYAL ENFIELD BIKES INDIA",
+                                "SUZUKI MOTORCYCLE",
+                                "TVS MOTOR CO",
+                                "YAMAHA MOTOR"
+                            ],
+                            "old_column": "PRIMARY ASSET MAKE"
+                        }
+                    },
+                    "columns": [
+                        "ADDRESS TYPE",
+                        "ASSET CTG",
+                        "EMPLOYER TYPE",
+                        "PRIMARY ASSET MAKE"
+                    ]
+                }
+            ],
+            "categorical_y": {
+                "APPROVED": 0,
+                "DECLINED": 1
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "ADDRESS TYPE": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "ASSET CTG": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "EMPLOYER TYPE": [
+                        "na_fill_median",
+                        "categorical_to_onehot"
+                    ],
+                    "HDB BRANCH STATE": [
+                        "na_fill_median",
+                        "categorical_to_int"
+                    ],
+                    "PRIMARY ASSET MAKE": [
+                        "categorical_to_onehot"
+                    ],
+                    "TOTAL ASSET COST": [
+                        "na_fill_median"
+                    ],
+                    "phone_nameMatchScore": [
+                        "na_fill_median"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "2.1.1",
+            "algorithm_name": "Extreme Gradient Boosting",
+            "algorithm_short_name": "Xgboost",
+            "uid": "7aabb6df-a426-451d-9b38-7dd5d376a5c0",
+            "params": {
+                "model_type": "Xgboost",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 48,
+                "objective": "binary:logistic",
+                "eta": 0.1,
+                "max_depth": 5,
+                "min_child_weight": 5,
+                "subsample": 0.7,
+                "colsample_bytree": 0.6,
+                "eval_metric": "auc",
+                "explain_level": 0
+            },
+            "name": "learner_fold_0"
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_rounds": 10000,
+            "early_stopping_rounds": 50,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "ADDRESS TYPE": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "ASSET CTG": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "EMPLOYER TYPE": [
+                    "na_fill_median",
+                    "categorical_to_onehot"
+                ],
+                "HDB BRANCH STATE": [
+                    "na_fill_median",
+                    "categorical_to_int"
+                ],
+                "PRIMARY ASSET MAKE": [
+                    "categorical_to_onehot"
+                ],
+                "TOTAL ASSET COST": [
+                    "na_fill_median"
+                ],
+                "phone_nameMatchScore": [
+                    "na_fill_median"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.8,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "AutoML_4/X.data",
+            "y_path": "AutoML_4/y.data",
+            "results_path": "AutoML_4"
+        },
+        "learner": {
+            "model_type": "Xgboost",
+            "ml_task": "binary_classification",
+            "n_jobs": -1,
+            "seed": 48,
+            "objective": "binary:logistic",
+            "eta": 0.1,
+            "max_depth": 5,
+            "min_child_weight": 5,
+            "subsample": 0.7,
+            "colsample_bytree": 0.6,
+            "eval_metric": "auc",
+            "explain_level": 0
+        },
+        "automl_random_state": 42,
+        "ml_task": "binary_classification",
+        "explain_level": 0,
+        "name": "12_Xgboost_categorical_mix",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null,
+        "data_type": "original_categorical_mix",
+        "max_time_for_learner": 360.0
+    },
+    "saved": [
+        "12_Xgboost_categorical_mix/learner_fold_0.xgboost.json"
+    ],
+    "predictions_fname": "12_Xgboost_categorical_mix/predictions_validation.csv",
+    "metric_name": "auc",
+    "final_loss": "-0.8982210579030678",
+    "train_time": 1.9708278179168701,
+    "is_stacked": false,
+    "joblib_version": "1.2.0",
+    "threshold": 0.5554324388504028
+}

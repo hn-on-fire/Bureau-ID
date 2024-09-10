@@ -1,0 +1,257 @@
+{
+    "uid": "a51811f9-2a41-4254-b873-81bf24ea0010",
+    "name": "45_ExtraTrees",
+    "preprocessing": [
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "ADDRESS TYPE": "Self/Spouse Owned",
+                        "ASSET CTG": "MCECA",
+                        "EMPLOYER TYPE": "SELF-EMPLOYED",
+                        "HDB BRANCH STATE": "UTTAR PRADESH",
+                        "TOTAL ASSET COST": 94404.0
+                    },
+                    "datetime_columns": []
+                }
+            ],
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "ADDRESS TYPE": {
+                            "Company Provided": 0,
+                            "OWNDED-FLAT": 1,
+                            "OWNED-BUNGLOW": 2,
+                            "OWNED-PENTHOUSE": 3,
+                            "OWNED-ROWHOUSE": 4,
+                            "PARENT OWNED-FLAT": 5,
+                            "PARENT OWNED-HOUSE": 6,
+                            "Parental": 7,
+                            "RENTED-ROWHOUSE": 8,
+                            "RESIDENCE": 9,
+                            "Rented": 10,
+                            "Self/Spouse Owned": 11
+                        },
+                        "ASSET CTG": {
+                            "EMECA": 0,
+                            "ESECB": 1,
+                            "ESNRB": 2,
+                            "ESNRC": 3,
+                            "MCECA": 4,
+                            "MCECB": 5,
+                            "MCECC": 6,
+                            "MCEXA": 7,
+                            "MCEXB": 8,
+                            "MCPRA": 9,
+                            "MOECA": 10,
+                            "SCECA": 11,
+                            "SCEXA": 12
+                        },
+                        "EMPLOYER TYPE": {
+                            "Government": 0,
+                            "Non-Government": 1,
+                            "SALARIED": 2,
+                            "SELF-EMPLOYED": 3
+                        },
+                        "HDB BRANCH STATE": {
+                            "ANDHRA PRADESH": 0,
+                            "ASSAM": 1,
+                            "BIHAR": 2,
+                            "CHHATTISGARH": 3,
+                            "DELHI": 4,
+                            "GUJARAT": 5,
+                            "HARYANA": 6,
+                            "HIMACHAL PRADESH": 7,
+                            "JHARKHAND": 8,
+                            "KARNATAKA": 9,
+                            "KERALA": 10,
+                            "MADHYA PRADESH": 11,
+                            "MAHARASHTRA": 12,
+                            "ORISSA": 13,
+                            "PUDUCHERRY": 14,
+                            "PUNJAB": 15,
+                            "RAJASTHAN": 16,
+                            "SIKKIM": 17,
+                            "TAMIL NADU": 18,
+                            "TELANGANA": 19,
+                            "TRIPURA": 20,
+                            "UTTAR PRADESH": 21,
+                            "UTTARAKHAND": 22,
+                            "WEST BENGAL": 23
+                        },
+                        "PRIMARY ASSET MAKE": {
+                            "AMO ELECTRIC": 0,
+                            "AMPERE MOTORS": 1,
+                            "BAJAJ AUTO INDIA": 2,
+                            "BENLING ELECTRIC": 3,
+                            "HERO ELECTRIC VEHICLES P LTD": 4,
+                            "HERO MOTORS": 5,
+                            "HONDA MOTORS": 6,
+                            "HOP ELECTRIC": 7,
+                            "JAWA MOTORS": 8,
+                            "OKAYA ELECTRIC": 9,
+                            "OKINAWA ELECTRIC": 10,
+                            "PIAGGIO INDIA": 11,
+                            "ROYAL ENFIELD BIKES INDIA": 12,
+                            "SUZUKI MOTORCYCLE": 13,
+                            "TVS MOTOR CO": 14,
+                            "YAMAHA MOTOR": 15
+                        }
+                    },
+                    "columns": [
+                        "ADDRESS TYPE",
+                        "ASSET CTG",
+                        "EMPLOYER TYPE",
+                        "HDB BRANCH STATE",
+                        "PRIMARY ASSET MAKE"
+                    ]
+                }
+            ],
+            "categorical_y": {
+                "APPROVED": 0,
+                "DECLINED": 1
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "ADDRESS TYPE": [
+                        "na_fill_median",
+                        "categorical_to_int"
+                    ],
+                    "ASSET CTG": [
+                        "na_fill_median",
+                        "categorical_to_int"
+                    ],
+                    "EMPLOYER TYPE": [
+                        "na_fill_median",
+                        "categorical_to_int"
+                    ],
+                    "HDB BRANCH STATE": [
+                        "na_fill_median",
+                        "categorical_to_int"
+                    ],
+                    "PRIMARY ASSET MAKE": [
+                        "categorical_to_int"
+                    ],
+                    "TOTAL ASSET COST": [
+                        "na_fill_median"
+                    ],
+                    "phone_nameMatchScore": [
+                        "na_fill_median"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "1.2.0",
+            "algorithm_name": "Extra Trees Classifier",
+            "algorithm_short_name": "Extra Trees",
+            "uid": "86f1deb2-17ba-4bba-81bd-922d8113c7ec",
+            "params": {
+                "model_type": "Extra Trees",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 45,
+                "criterion": "gini",
+                "max_features": 1.0,
+                "min_samples_split": 30,
+                "max_depth": 3,
+                "eval_metric_name": "auc",
+                "explain_level": 0
+            },
+            "name": "learner_fold_0"
+        }
+    ],
+    "params": {
+        "additional": {
+            "trees_in_step": 100,
+            "max_steps": 50,
+            "early_stopping_rounds": 50,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "ADDRESS TYPE": [
+                    "na_fill_median",
+                    "categorical_to_int"
+                ],
+                "ASSET CTG": [
+                    "na_fill_median",
+                    "categorical_to_int"
+                ],
+                "EMPLOYER TYPE": [
+                    "na_fill_median",
+                    "categorical_to_int"
+                ],
+                "HDB BRANCH STATE": [
+                    "na_fill_median",
+                    "categorical_to_int"
+                ],
+                "PRIMARY ASSET MAKE": [
+                    "categorical_to_int"
+                ],
+                "TOTAL ASSET COST": [
+                    "na_fill_median"
+                ],
+                "phone_nameMatchScore": [
+                    "na_fill_median"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.8,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "AutoML_4/X.data",
+            "y_path": "AutoML_4/y.data",
+            "results_path": "AutoML_4"
+        },
+        "learner": {
+            "model_type": "Extra Trees",
+            "ml_task": "binary_classification",
+            "n_jobs": -1,
+            "seed": 45,
+            "criterion": "gini",
+            "max_features": 1.0,
+            "min_samples_split": 30,
+            "max_depth": 3,
+            "eval_metric_name": "auc",
+            "explain_level": 0
+        },
+        "automl_random_state": 42,
+        "ml_task": "binary_classification",
+        "explain_level": 0,
+        "name": "45_ExtraTrees",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null,
+        "data_type": "original",
+        "max_time_for_learner": 360.0
+    },
+    "saved": [
+        "45_ExtraTrees/learner_fold_0.extra_trees"
+    ],
+    "predictions_fname": "45_ExtraTrees/predictions_validation.csv",
+    "metric_name": "auc",
+    "final_loss": "-0.8663641785636094",
+    "train_time": 2.484220504760742,
+    "is_stacked": false,
+    "joblib_version": "1.2.0",
+    "threshold": 0.4750278981858069
+}

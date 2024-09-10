@@ -1,0 +1,150 @@
+{
+    "uid": "673e3d67-afe8-4a23-b2db-9f43aea5cd74",
+    "name": "83_CatBoost",
+    "preprocessing": [
+        {
+            "missing_values": [
+                {
+                    "fill_method": "na_fill_median",
+                    "fill_params": {
+                        "ADDRESS TYPE": "Self/Spouse Owned",
+                        "ASSET CTG": "MCECA",
+                        "EMPLOYER TYPE": "SELF-EMPLOYED",
+                        "HDB BRANCH STATE": "UTTAR PRADESH",
+                        "TOTAL ASSET COST": 94404.0
+                    },
+                    "datetime_columns": []
+                }
+            ],
+            "categorical_y": {
+                "APPROVED": 0,
+                "DECLINED": 1
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "ADDRESS TYPE": [
+                        "na_fill_median"
+                    ],
+                    "ASSET CTG": [
+                        "na_fill_median"
+                    ],
+                    "EMPLOYER TYPE": [
+                        "na_fill_median"
+                    ],
+                    "HDB BRANCH STATE": [
+                        "na_fill_median"
+                    ],
+                    "TOTAL ASSET COST": [
+                        "na_fill_median"
+                    ],
+                    "phone_nameMatchScore": [
+                        "na_fill_median"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "1.2.7",
+            "algorithm_name": "CatBoost",
+            "algorithm_short_name": "CatBoost",
+            "uid": "f8571cbe-0ebd-42a5-8cf1-5d6493481e7a",
+            "params": {
+                "model_type": "CatBoost",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 50,
+                "learning_rate": 0.05,
+                "depth": 7,
+                "rsm": 1.0,
+                "loss_function": "Logloss",
+                "eval_metric": "AUC",
+                "explain_level": 0
+            },
+            "name": "learner_fold_0",
+            "best_ntree_limit": 204
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_rounds": 10000,
+            "early_stopping_rounds": 50,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "ADDRESS TYPE": [
+                    "na_fill_median"
+                ],
+                "ASSET CTG": [
+                    "na_fill_median"
+                ],
+                "EMPLOYER TYPE": [
+                    "na_fill_median"
+                ],
+                "HDB BRANCH STATE": [
+                    "na_fill_median"
+                ],
+                "TOTAL ASSET COST": [
+                    "na_fill_median"
+                ],
+                "phone_nameMatchScore": [
+                    "na_fill_median"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.8,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "AutoML_4/X.data",
+            "y_path": "AutoML_4/y.data",
+            "results_path": "AutoML_4"
+        },
+        "learner": {
+            "model_type": "CatBoost",
+            "ml_task": "binary_classification",
+            "n_jobs": -1,
+            "seed": 50,
+            "learning_rate": 0.05,
+            "depth": 7,
+            "rsm": 1.0,
+            "loss_function": "Logloss",
+            "eval_metric": "AUC",
+            "explain_level": 0
+        },
+        "automl_random_state": 42,
+        "ml_task": "binary_classification",
+        "explain_level": 0,
+        "name": "83_CatBoost",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null,
+        "data_type": "original",
+        "max_time_for_learner": 360.0
+    },
+    "saved": [
+        "83_CatBoost/learner_fold_0.catboost"
+    ],
+    "predictions_fname": "83_CatBoost/predictions_validation.csv",
+    "metric_name": "auc",
+    "final_loss": "-0.9039096964801155",
+    "train_time": 3.2095329761505127,
+    "is_stacked": false,
+    "joblib_version": "1.2.0",
+    "threshold": 0.5625607910559587
+}
